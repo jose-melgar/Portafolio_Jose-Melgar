@@ -1,0 +1,110 @@
+<div class="about-container">
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <div class="profile-info">
+      <div class="profile-image">
+        <div class="profile-placeholder">
+          <span>{{ personalInfo.nombre.charAt(0) }}{{ personalInfo.apellidos.charAt(0) }}</span>
+        </div>
+      </div>
+      <h1>{{ personalInfo.nombre }} {{ personalInfo.apellidos }}</h1>
+      <h2>{{ personalInfo.titulo }}</h2>
+      <p class="tagline">{{ personalInfo.bio }}</p>
+      <div class="availability-badge" [class.available]="personalInfo.disponibilidad">
+        <span>{{ personalInfo.disponibilidad ? 'Disponible' : 'No Disponible' }}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Información Personal -->
+  <div class="content-section">
+    <div class="personal-details">
+      <h3>Información Personal</h3>
+      <div class="details-grid">
+        <div class="detail-item">
+          <span class="label">Email:</span>
+          <a href="mailto:{{ personalInfo.email }}">{{ personalInfo.email }}</a>
+        </div>
+        <div class="detail-item">
+          <span class="label">Ubicación:</span>
+          <span>{{ personalInfo.ubicacion }}</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Estado:</span>
+          <span [class.available]="personalInfo.disponibilidad">
+            {{ personalInfo.disponibilidad ? 'Disponible para proyectos' : 'No disponible actualmente' }}
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Redes Sociales -->
+    <div class="social-section">
+      <h3>Redes Sociales</h3>
+      <div class="social-grid">
+        <div class="social-item" *ngFor="let red of personalInfo.redesSociales">
+          <a [href]="red.url" target="_blank" class="social-link">
+            <span class="social-icon">{{ red.icono }}</span>
+            <span class="social-name">{{ red.nombre }}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Habilidades Técnicas -->
+    <div class="skills-section">
+      <h3>Habilidades Técnicas</h3>
+      <div class="skills-grid">
+        <div class="skill-category" *ngFor="let categoria of getCategoriasUnicas()">
+          <h4>{{ categoria }}</h4>
+          <div class="skills-list">
+            <div class="skill-item" *ngFor="let habilidad of getHabilidadesPorCategoria(categoria)">
+              <div class="skill-header">
+                <span class="skill-name">{{ habilidad.nombre }}</span>
+                <span class="skill-level">{{ getNivelEstrellas(habilidad.nivel) }}</span>
+              </div>
+              <p class="skill-description">{{ habilidad.descripcion }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Experiencia Laboral -->
+    <div class="experience-section">
+      <h3>Experiencia Laboral</h3>
+      <div class="experience-timeline">
+        <div class="experience-item" *ngFor="let exp of personalInfo.experiencia">
+          <div class="experience-header">
+            <h4>{{ exp.titulo }}</h4>
+            <span class="company">{{ exp.empresa }}</span>
+          </div>
+          <div class="experience-dates">
+            <span>{{ exp.fechaInicio }} - {{ exp.fechaFin || 'Presente' }}</span>
+          </div>
+          <p class="experience-description">{{ exp.descripcion }}</p>
+          <div class="technologies">
+            <span class="tech-tag" *ngFor="let tech of exp.tecnologias">{{ tech }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Educación -->
+    <div class="education-section">
+      <h3>Educación</h3>
+      <div class="education-timeline">
+        <div class="education-item" *ngFor="let edu of personalInfo.educacion">
+          <div class="education-header">
+            <h4>{{ edu.titulo }}</h4>
+            <span class="institution">{{ edu.institucion }}</span>
+          </div>
+          <div class="education-dates">
+            <span>{{ edu.fechaInicio }} - {{ edu.fechaFin || 'Presente' }}</span>
+          </div>
+          <p class="education-description">{{ edu.descripcion }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
