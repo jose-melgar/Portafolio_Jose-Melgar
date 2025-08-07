@@ -1,0 +1,52 @@
+{
+  "habilidades": [
+    {
+      "id": 1,
+      "nombre": "Angular",
+      "categoria": "Frontend",
+      "nivel": 4,
+      "descripcion": "Framework de desarrollo frontend",
+      "certificado": "assets/skills/certificados/angular-cert.pdf"
+    },
+    {
+      "id": 2,
+      "nombre": "Spring Boot",
+      "categoria": "Backend",
+      "nivel": 4,
+      "descripcion": "Framework de desarrollo backend",
+      "certificado": "assets/skills/certificados/spring-cert.pdf"
+    },
+    {
+      "id": 3,
+      "nombre": "Java",
+      "categoria": "Backend",
+      "nivel": 5,
+      "descripcion": "Lenguaje de programación principal",
+      "certificado": "assets/skills/certificados/java-cert.pdf"
+    },
+    {
+      "id": 4,
+      "nombre": "TypeScript",
+      "categoria": "Frontend",
+      "nivel": 4,
+      "descripcion": "Lenguaje de programación tipado",
+      "certificado": "assets/skills/certificados/typescript-cert.pdf"
+    },
+    {
+      "id": 5,
+      "nombre": "MySQL",
+      "categoria": "Base de Datos",
+      "nivel": 4,
+      "descripcion": "Sistema de gestión de bases de datos",
+      "certificado": "assets/skills/certificados/mysql-cert.pdf"
+    },
+    {
+      "id": 6,
+      "nombre": "Docker",
+      "categoria": "DevOps",
+      "nivel": 3,
+      "descripcion": "Plataforma de contenedores",
+      "certificado": "assets/skills/certificados/docker-cert.pdf"
+    }
+  ]
+}

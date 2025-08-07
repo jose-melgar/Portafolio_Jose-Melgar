@@ -1,1 +1,41 @@
-<p>projects works!</p>
+<div class="projects-container">
+  <div class="projects-header">
+    <h2>Proyectos</h2>
+    <p>Algunos de los proyectos que he desarrollado</p>
+  </div>
+
+  <div class="projects-grid">
+    <div class="project-card" *ngFor="let proyecto of proyectos">
+      <div class="project-image">
+        <div class="project-placeholder">
+          <span>{{ proyecto.titulo.charAt(0) }}</span>
+        </div>
+      </div>
+      
+      <div class="project-content">
+        <div class="project-header">
+          <h3>{{ proyecto.titulo }}</h3>
+          <span class="project-category">{{ proyecto.categoria }}</span>
+        </div>
+        
+        <p class="project-description">{{ proyecto.descripcion }}</p>
+        
+        <div class="project-technologies">
+          <span class="tech-tag" *ngFor="let tech of proyecto.tecnologias">{{ tech }}</span>
+        </div>
+        
+        <div class="project-footer">
+          <span class="project-date">{{ proyecto.fecha }}</span>
+          <div class="project-links">
+            <a *ngIf="proyecto.urlDemo" [href]="proyecto.urlDemo" target="_blank" class="project-link demo">
+              Demo
+            </a>
+            <a *ngIf="proyecto.urlGitHub" [href]="proyecto.urlGitHub" target="_blank" class="project-link github">
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

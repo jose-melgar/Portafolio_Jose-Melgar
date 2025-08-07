@@ -1,1 +1,24 @@
-<p>education works!</p>
+<div class="education-container">
+  <div class="education-header">
+    <h2>Educación</h2>
+    <p>Mi formación académica y desarrollo profesional continuo</p>
+  </div>
+
+  <div class="education-timeline">
+    <div class="education-section" *ngFor="let tipo of getTiposUnicos()">
+      <h3>{{ getTipoDisplay(tipo) }}</h3>
+      <div class="education-items">
+        <div class="education-item" *ngFor="let edu of getEducacionPorTipo(tipo)">
+          <div class="education-header-item">
+            <h4>{{ edu.titulo }}</h4>
+            <span class="institution">{{ edu.institucion }}</span>
+          </div>
+          <div class="education-dates">
+            <span>{{ edu.fechaInicio }} - {{ edu.fechaFin || 'Presente' }}</span>
+          </div>
+          <p class="education-description">{{ edu.descripcion }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

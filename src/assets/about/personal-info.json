@@ -1,0 +1,32 @@
+{
+  "personalInfo": {
+    "id": 1,
+    "nombre": "José Guillermo",
+    "apellidos": "Melgar Puertas",
+    "titulo": "Desarrollador Full Stack",
+    "email": "jose.melgar@example.com",
+    "ubicacion": "Lima, Perú",
+    "bio": "Desarrollador Full Stack apasionado por crear soluciones innovadoras y experiencias digitales excepcionales. Especializado en Angular, Spring Boot y tecnologías modernas.",
+    "disponibilidad": true,
+    "redesSociales": [
+      {
+        "id": 1,
+        "nombre": "LinkedIn",
+        "url": "https://linkedin.com/in/jose-melgar",
+        "icono": "linkedin"
+      },
+      {
+        "id": 2,
+        "nombre": "GitHub",
+        "url": "https://github.com/jose-melgar",
+        "icono": "github"
+      },
+      {
+        "id": 3,
+        "nombre": "Email",
+        "url": "mailto:jose.melgar@example.com",
+        "icono": "email"
+      }
+    ]
+  }
+}

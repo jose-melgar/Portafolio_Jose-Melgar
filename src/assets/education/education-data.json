@@ -1,0 +1,34 @@
+{
+  "educacion": [
+    {
+      "id": 1,
+      "titulo": "Ingeniería de Sistemas",
+      "institucion": "Universidad Nacional",
+      "fechaInicio": "2018-03",
+      "fechaFin": "2023-12",
+      "descripcion": "Formación en desarrollo de software y sistemas informáticos",
+      "tipo": "formal",
+      "certificado": "assets/education/certificados/ingenieria-sistemas.pdf"
+    },
+    {
+      "id": 2,
+      "titulo": "Certificación Angular",
+      "institucion": "Platzi",
+      "fechaInicio": "2023-06",
+      "fechaFin": "2023-08",
+      "descripcion": "Curso completo de Angular y TypeScript",
+      "tipo": "certificacion",
+      "certificado": "assets/education/certificados/angular-platzi.pdf"
+    },
+    {
+      "id": 3,
+      "titulo": "Spring Boot Masterclass",
+      "institucion": "Udemy",
+      "fechaInicio": "2023-01",
+      "fechaFin": "2023-03",
+      "descripcion": "Desarrollo de aplicaciones backend con Spring Boot",
+      "tipo": "curso",
+      "certificado": "assets/education/certificados/spring-udemy.pdf"
+    }
+  ]
+}
