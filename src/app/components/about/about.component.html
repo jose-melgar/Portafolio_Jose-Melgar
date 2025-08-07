@@ -1,23 +1,6 @@
 <!-- Sección Sobre Mí -->
 <section id="about" class="section">
   <div class="about-container">
-    <!-- Hero Section -->
-    <div class="hero-section" *ngIf="!loadingPersonal && !errorPersonal && personalInfo">
-      <div class="profile-info">
-        <div class="profile-image">
-          <div class="profile-placeholder">
-            <span>{{ personalInfo.nombre.charAt(0) }}{{ personalInfo.apellidos.charAt(0) }}</span>
-          </div>
-        </div>
-        <h1>{{ personalInfo.nombre }} {{ personalInfo.apellidos }}</h1>
-        <h2>{{ personalInfo.titulo }}</h2>
-        <p class="tagline">{{ personalInfo.bio }}</p>
-        <div class="availability-badge" [class.available]="personalInfo.disponibilidad">
-          <span>{{ personalInfo.disponibilidad ? 'Disponible' : 'No Disponible' }}</span>
-        </div>
-      </div>
-    </div>
-
     <!-- Loading y Error para About -->
     <div class="loading-error" *ngIf="loadingPersonal">
       <p>Cargando información personal...</p>
@@ -26,8 +9,29 @@
       <p>Falla al encontrar data</p>
     </div>
 
-    <!-- Información Personal -->
-    <div class="content-section" *ngIf="!loadingPersonal && !errorPersonal && personalInfo">
+    <!-- Contenido Principal -->
+    <div class="about-layout" *ngIf="!loadingPersonal && !errorPersonal && personalInfo">
+      <!-- Perfil Principal (Izquierda) -->
+      <div class="profile-main">
+        <div class="profile-image">
+          <ng-container *ngIf="profileImageLoaded; else profilePlaceholder">
+            <img src="assets/img/profile.jpg" alt="Foto de perfil" class="profile-photo" (load)="onProfileImageLoad(true)" (error)="onProfileImageLoad(false)">
+          </ng-container>
+          <ng-template #profilePlaceholder>
+            <div class="profile-placeholder">
+              <span>{{ personalInfo.nombre.charAt(0) }}{{ personalInfo.apellidos.charAt(0) }}</span>
+            </div>
+          </ng-template>
+        </div>
+        <h1>{{ personalInfo.nombre }} {{ personalInfo.apellidos }}</h1>
+        <h2>{{ personalInfo.titulo }}</h2>
+        <p class="tagline">{{ personalInfo.bio }}</p>
+        <div class="availability-badge" [class.available]="personalInfo.disponibilidad">
+          <span>{{ personalInfo.disponibilidad ? 'Disponible' : 'No Disponible' }}</span>
+        </div>
+      </div>
+
+      <!-- Información Personal (Derecha) -->
       <div class="personal-details">
         <h3>Información Personal</h3>
         <div class="details-grid">
@@ -44,19 +48,6 @@
             <span [class.available]="personalInfo.disponibilidad">
               {{ personalInfo.disponibilidad ? 'Disponible para proyectos' : 'No disponible actualmente' }}
             </span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Redes Sociales -->
-      <div class="social-section">
-        <h3>Redes Sociales</h3>
-        <div class="social-grid">
-          <div class="social-item" *ngFor="let red of personalInfo.redesSociales">
-            <a [href]="red.url" target="_blank" class="social-link">
-              <span class="social-icon">{{ red.icono }}</span>
-              <span class="social-name">{{ red.nombre }}</span>
-            </a>
           </div>
         </div>
       </div>
@@ -119,7 +110,10 @@
     <div class="projects-grid" *ngIf="!loadingProjects && !errorProjects && proyectos.length > 0">
       <div class="project-card" *ngFor="let proyecto of proyectos">
         <div class="project-image">
-          <div class="project-placeholder">
+          <div class="project-logo-container" *ngIf="proyecto.imagen">
+            <img [src]="proyecto.imagen" [alt]="proyecto.titulo" class="project-logo">
+          </div>
+          <div class="project-placeholder" *ngIf="!proyecto.imagen">
             <span>{{ proyecto.titulo.charAt(0) }}</span>
           </div>
         </div>
@@ -241,7 +235,6 @@
           <div class="social-item" *ngFor="let red of redesSociales">
             <a [href]="red.url" target="_blank" class="social-link" [style.background-color]="red.color">
               <span class="social-icon">{{ red.icono }}</span>
-              <span class="social-name">{{ red.nombre }}</span>
             </a>
           </div>
         </div>

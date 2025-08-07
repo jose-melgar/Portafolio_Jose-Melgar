@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataService } from '../../services/data.service';
 
-// Interfaces similares a la estructura de MusiConnect_API
+// Interfaces que coinciden con la estructura de los archivos JSON
 interface PersonalInfo {
   id: number;
   nombre: string;
@@ -59,6 +59,8 @@ interface ContactInfo {
   email: string;
   telefono: string;
   ubicacion: string;
+  github: string;
+  linkedin: string;
   disponibilidad: boolean;
 }
 
@@ -93,10 +95,18 @@ export class AboutComponent implements OnInit {
   errorEducation = false;
   errorContact = false;
 
+  // Estado de la imagen de perfil
+  profileImageLoaded = true; // Inicialmente asumimos que la imagen cargará
+
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
     this.loadAllData();
+  }
+
+  // Método para manejar la carga de la imagen de perfil
+  onProfileImageLoad(success: boolean): void {
+    this.profileImageLoaded = success;
   }
 
   loadAllData(): void {
@@ -107,10 +117,12 @@ export class AboutComponent implements OnInit {
           this.errorPersonal = true;
         } else {
           this.personalInfo = data.personalInfo;
+          console.log('Información personal cargada:', this.personalInfo);
         }
         this.loadingPersonal = false;
       },
-      error: () => {
+      error: (err) => {
+        console.error('Error al cargar información personal:', err);
         this.errorPersonal = true;
         this.loadingPersonal = false;
       }
@@ -123,10 +135,12 @@ export class AboutComponent implements OnInit {
           this.errorSkills = true;
         } else {
           this.habilidades = data.habilidades;
+          console.log('Habilidades cargadas:', this.habilidades);
         }
         this.loadingSkills = false;
       },
-      error: () => {
+      error: (err) => {
+        console.error('Error al cargar habilidades:', err);
         this.errorSkills = true;
         this.loadingSkills = false;
       }
@@ -139,10 +153,12 @@ export class AboutComponent implements OnInit {
           this.errorProjects = true;
         } else {
           this.proyectos = data.proyectos;
+          console.log('Proyectos cargados:', this.proyectos);
         }
         this.loadingProjects = false;
       },
-      error: () => {
+      error: (err) => {
+        console.error('Error al cargar proyectos:', err);
         this.errorProjects = true;
         this.loadingProjects = false;
       }
@@ -155,10 +171,12 @@ export class AboutComponent implements OnInit {
           this.errorEducation = true;
         } else {
           this.educacion = data.educacion;
+          console.log('Educación cargada:', this.educacion);
         }
         this.loadingEducation = false;
       },
-      error: () => {
+      error: (err) => {
+        console.error('Error al cargar educación:', err);
         this.errorEducation = true;
         this.loadingEducation = false;
       }
@@ -172,10 +190,13 @@ export class AboutComponent implements OnInit {
         } else {
           this.contactInfo = data.contactInfo;
           this.redesSociales = data.redesSociales;
+          console.log('Información de contacto cargada:', this.contactInfo);
+          console.log('Redes sociales cargadas:', this.redesSociales);
         }
         this.loadingContact = false;
       },
-      error: () => {
+      error: (err) => {
+        console.error('Error al cargar información de contacto:', err);
         this.errorContact = true;
         this.loadingContact = false;
       }

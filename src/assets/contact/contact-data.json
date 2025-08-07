@@ -1,38 +1,30 @@
 {
   "contactInfo": {
-    "email": "jose.melgar@example.com",
-    "telefono": "+51 999 888 777",
+    "email": "melgarpuertasjose938@gmail.com",
+    "telefono": "+51 923 651 527",
     "ubicacion": "Lima, Perú",
+    "github": "https://github.com/JoseG03",
+    "linkedin": "https://www.linkedin.com/in/josé-guillermo-melgar-puertas-abb1712bb",
     "disponibilidad": true
   },
   "redesSociales": [
     {
       "id": 1,
       "nombre": "LinkedIn",
-      "url": "https://linkedin.com/in/jose-melgar",
-      "icono": "linkedin",
-      "color": "#0077b5"
+      "url": "https://www.linkedin.com/in/josé-guillermo-melgar-puertas-abb1712bb",
+      "icono": "linkedin"
     },
     {
       "id": 2,
       "nombre": "GitHub",
-      "url": "https://github.com/jose-melgar",
-      "icono": "github",
-      "color": "#333"
+      "url": "https://github.com/JoseG03",
+      "icono": "github"
     },
     {
       "id": 3,
-      "nombre": "Twitter",
-      "url": "https://twitter.com/jose-melgar",
-      "icono": "twitter",
-      "color": "#1da1f2"
-    },
-    {
-      "id": 4,
       "nombre": "Email",
-      "url": "mailto:jose.melgar@example.com",
-      "icono": "email",
-      "color": "#ea4335"
+      "url": "melgarpuertasjose938@gmail.com",
+      "icono": "email"
     }
   ]
 }
