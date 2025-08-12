@@ -12,7 +12,10 @@ interface PersonalInfo {
   ubicacion: string;
   bio: string;
   disponibilidad: boolean;
-  redesSociales: RedSocial[];
+  estado: string;
+  fraseMotivacional: string;
+  logros: string[];
+  tecnologiasFavoritas: string[];
 }
 
 interface RedSocial {
@@ -63,6 +66,8 @@ interface ContactInfo {
   linkedin: string;
   disponibilidad: boolean;
 }
+
+
 
 @Component({
   selector: 'app-about',

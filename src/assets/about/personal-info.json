@@ -6,20 +6,24 @@
     "titulo": "Estudiante de Ciencias de la Computación",
     "email": "melgarpuertasjose938@gmail.com",
     "ubicacion": "Lima, Perú",
-    "bio": "Soy un estudiante de Ciencias de la Computación con experiencia en desarrollo web, machine learning y automatización. Apasionado por resolver problemas reales a través de la tecnología, tengo conocimientos sólidos en Angular, Python, SQL y más. Me caracteriza la disciplina y la adaptabilidad, cualidades que desarrollé como atleta universitario de alto rendimiento.",
+    "bio": "Soy un estudiante de Ciencias de la Computación con experiencia en desarrollo web, análisis de datos y programación de videojuegos. Apasionado por resolver problemas reales a través de la tecnología, tengo conocimientos sólidos en Angular, Python, SQL, C++ y más. Me caracteriza la disciplina y la adaptabilidad, cualidades que desarrollé como atleta universitario de alto rendimiento.",
     "disponibilidad": true,
     "estado": "Abierto a oportunidades",
     "fraseMotivacional": "No busco ser el mejor programador, sino el más útil para resolver lo que el mundo necesita.",
     "logros": [
       "Seleccionado en el equipo de atletismo universitario (2024–2025)",
-      "Certificado en Machine Learning por Coursera"
+      "Certificado en Machine Learning por Coursera",
+      "Primer software vendido: sistema de citas para peluquerías"
     ],
     "tecnologiasFavoritas": [
       "Angular",
       "Python",
       "SQL",
-      "Node-RED",
-      "YOLOv8"
+      "C++",
+      "HTML",
+      "JavaScript",
+      "R",
+      "Unity"
     ]
   }
 }

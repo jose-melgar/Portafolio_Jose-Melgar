@@ -29,6 +29,13 @@
         <div class="availability-badge" [class.available]="personalInfo.disponibilidad">
           <span>{{ personalInfo.disponibilidad ? 'Disponible' : 'No Disponible' }}</span>
         </div>
+        
+        <!-- Frase Motivacional -->
+        <div class="motivational-quote">
+          <blockquote>
+            <p>"{{ personalInfo.fraseMotivacional }}"</p>
+          </blockquote>
+        </div>
       </div>
 
       <!-- Información Personal (Derecha) -->
@@ -46,7 +53,28 @@
           <div class="detail-item">
             <span class="label">Estado:</span>
             <span [class.available]="personalInfo.disponibilidad">
-              {{ personalInfo.disponibilidad ? 'Disponible para proyectos' : 'No disponible actualmente' }}
+              {{ personalInfo.estado }}
+            </span>
+          </div>
+        </div>
+        
+        <!-- Sección de Logros -->
+        <div class="achievements-section">
+          <h3>Logros Destacados</h3>
+          <div class="achievements-list">
+            <div class="achievement-item" *ngFor="let logro of personalInfo.logros">
+              <div class="achievement-icon">🏆</div>
+              <p>{{ logro }}</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Sección de Tecnologías Favoritas -->
+        <div class="technologies-section">
+          <h3>Tecnologías Favoritas</h3>
+          <div class="technologies-grid">
+            <span class="tech-badge" *ngFor="let tech of personalInfo.tecnologiasFavoritas">
+              {{ tech }}
             </span>
           </div>
         </div>
