@@ -1,0 +1,30 @@
+{
+  "contactInfo": {
+    "email": "melgarpuertasjose938@gmail.com",
+    "telefono": "+51 923 651 527",
+    "ubicacion": "Lima, Perú",
+    "github": "https://github.com/JoseG03",
+    "linkedin": "https://www.linkedin.com/in/josé-guillermo-melgar-puertas-abb1712bb",
+    "disponibilidad": true
+  },
+  "redesSociales": [
+    {
+      "id": 1,
+      "nombre": "LinkedIn",
+      "url": "https://www.linkedin.com/in/josé-guillermo-melgar-puertas-abb1712bb",
+      "icono": "linkedin"
+    },
+    {
+      "id": 2,
+      "nombre": "GitHub",
+      "url": "https://github.com/jose-melgar",
+      "icono": "github"
+    },
+    {
+      "id": 3,
+      "nombre": "Email",
+      "url": "melgarpuertasjose938@gmail.com",
+      "icono": "email"
+    }
+  ]
+}

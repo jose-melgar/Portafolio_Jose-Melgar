@@ -1,0 +1,14 @@
+{
+  "proyectos": [
+    {
+      "id": 1,
+      "titulo": "MusiConect",
+      "descripcion": "Aplicación web para conectar músicos por intereses y habilidades. Permite crear perfiles, publicar necesidades musicales y formar bandas.",
+      "tecnologias": ["Angular", "Firebase", "TypeScript"],
+      "imagen": "assets/projects/Logo MusiConect.png",
+      "urlGitHub": "https://github.com/MusiConect",
+      "categoria": "Desarrollo Web",
+      "fecha": "2023"
+    }
+  ]
+}

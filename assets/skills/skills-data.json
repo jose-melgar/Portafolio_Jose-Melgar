@@ -1,0 +1,27 @@
+{
+  "habilidades":[
+  { "id": 1, "nombre": "Python", "categoria": "Lenguajes de Programación", "descripcion": "Lenguaje multipropósito, fácil de aprender y ampliamente usado en ciencia de datos, web y automatización." },
+  { "id": 2, "nombre": "C++", "categoria": "Lenguajes de Programación", "descripcion": "Lenguaje orientado a objetos, utilizado en desarrollo de software de alto rendimiento y videojuegos." },
+  { "id": 3, "nombre": "JavaScript", "categoria": "Lenguajes de Programación", "descripcion": "Lenguaje principal para desarrollo web frontend y backend." },
+  { "id": 4, "nombre": "TypeScript", "categoria": "Lenguajes de Programación", "descripcion": "Superset de JavaScript que añade tipado estático." },
+
+  { "id": 5, "nombre": "HTML", "categoria": "Desarrollo Web", "descripcion": "Lenguaje de marcado para estructurar páginas web." },
+  { "id": 6, "nombre": "CSS", "categoria": "Desarrollo Web", "descripcion": "Lenguaje de estilos para diseño y presentación web." },
+  { "id": 7, "nombre": "Angular", "categoria": "Desarrollo Web", "descripcion": "Framework para aplicaciones web SPA." },
+
+  { "id": 8, "nombre": "Angular", "categoria": "Frameworks", "descripcion": "Framework para aplicaciones web SPA." },
+
+  { "id": 9, "nombre": "MongoDB", "categoria": "Bases de Datos", "descripcion": "Base de datos NoSQL orientada a documentos." },
+  { "id": 10, "nombre": "MySQL", "categoria": "Bases de Datos", "descripcion": "Base de datos relacional ampliamente utilizada." },
+  { "id": 11, "nombre": "PostgreSQL", "categoria": "Bases de Datos", "descripcion": "Base de datos relacional avanzada y open source." },
+  { "id": 12, "nombre": "SQLite", "categoria": "Bases de Datos", "descripcion": "Base de datos ligera y embebida." },
+
+  { "id": 13, "nombre": "Git", "categoria": "Herramientas", "descripcion": "Sistema de control de versiones distribuido." },
+  { "id": 14, "nombre": "Docker", "categoria": "Herramientas", "descripcion": "Plataforma para desarrollo y despliegue de aplicaciones en contenedores." },
+
+  { "id": 15, "nombre": "Comunicación", "categoria": "Habilidades Blandas", "descripcion": "Capacidad para expresar ideas y escuchar activamente." },
+  { "id": 16, "nombre": "Trabajo en equipo", "categoria": "Habilidades Blandas", "descripcion": "Colaboración efectiva con otros para lograr objetivos comunes." },
+  { "id": 17, "nombre": "Resolución de problemas", "categoria": "Habilidades Blandas", "descripcion": "Identificación y solución eficiente de desafíos." },
+  { "id": 18, "nombre": "Adaptabilidad", "categoria": "Habilidades Blandas", "descripcion": "Capacidad para ajustarse a cambios y aprender rápidamente." }
+  ]
+}
