@@ -1,0 +1,25 @@
+{
+  "personalInfo": {
+    "id": 1,
+    "nombre": "José Guillermo",
+    "apellidos": "Melgar Puertas",
+    "titulo": "Estudiante de Ciencias de la Computación",
+    "email": "melgarpuertasjose938@gmail.com",
+    "ubicacion": "Lima, Perú",
+    "bio": "Soy un estudiante de Ciencias de la Computación con experiencia en desarrollo web, análisis de datos y programación de videojuegos. Apasionado por resolver problemas reales a través de la tecnología, tengo conocimientos sólidos en Angular, Python, SQL, C++ y más. Me caracteriza la disciplina y la adaptabilidad, cualidades que desarrollé como atleta universitario de alto rendimiento.",
+    "estado": "Abierto a oportunidades",
+    "fraseMotivacional": "No busco ser el mejor programador, sino el más útil para resolver lo que el mundo necesita.",
+    "logros": [
+      "Seleccionado en el equipo de atletismo universitario (2024–2025)",
+      "Certificado en Machine Learning por Coursera"
+    ],
+    "tecnologiasFavoritas": [
+      "Angular",
+      "Python",
+      "SQL",
+      "C++",
+      "HTML",
+      "JavaScript"
+    ]
+  }
+}

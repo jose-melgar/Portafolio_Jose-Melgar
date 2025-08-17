@@ -1,1 +1,35 @@
-<p>skills works!</p>
+<!-- Sección Habilidades -->
+<section id="skills" class="section">
+  <div class="skills-container">
+    <div class="skills-header">
+      <h2>Habilidades Técnicas</h2>
+      <p>Conocimientos y tecnologías que manejo en el desarrollo de software</p>
+    </div>
+
+    <!-- Loading y Error para Skills -->
+    <div class="loading-error" *ngIf="loadingSkills">
+      <p>Cargando habilidades...</p>
+    </div>
+    <div class="error-message" *ngIf="errorSkills">
+      <p>Falla al encontrar data</p>
+    </div>
+
+    <div class="skills-grid" *ngIf="!loadingSkills && !errorSkills && habilidades.length > 0">
+      <div class="skill-category" *ngFor="let categoria of getCategoriasUnicas()">
+        <h3>{{ categoria }}</h3>
+        <div class="skills-list">
+          <div class="skill-item" *ngFor="let habilidad of getHabilidadesPorCategoria(categoria)">
+            <div class="skill-header">
+              <span class="skill-name">{{ habilidad.nombre }}</span>
+              <span class="skill-level">{{ getNivelEstrellas(habilidad.nivel) }}</span>
+            </div>
+            <p class="skill-description">{{ habilidad.descripcion }}</p>
+            <a *ngIf="habilidad.certificado" [href]="habilidad.certificado" target="_blank" class="certificate-link">
+              Ver Certificado
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

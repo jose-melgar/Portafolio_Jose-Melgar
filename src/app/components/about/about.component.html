@@ -1,4 +1,73 @@
-<section class="about">
-  <h2>Sobre mí</h2>
-  <p>Contenido temporal para probar el componente.</p>
+<section id="about" class="section">
+  <div class="about-container">
+    <div class="loading-error" *ngIf="loadingPersonal">
+      <p>Cargando información personal...</p>
+    </div>
+    <div class="error-message" *ngIf="errorPersonal">
+      <p>Falla al encontrar data</p>
+    </div>
+
+    <div class="about-layout" *ngIf="!loadingPersonal && !errorPersonal && personalInfo">
+      <div class="profile-main">
+        <div class="profile-image">
+          <ng-container *ngIf="profileImageLoaded; else profilePlaceholder">
+            <img src="assets/img/profile.jpg" alt="Foto de perfil" class="profile-photo" (load)="onProfileImageLoad(true)" (error)="onProfileImageLoad(false)">
+          </ng-container>
+          <ng-template #profilePlaceholder>
+            <div class="profile-placeholder">
+              <span>{{ personalInfo.nombre.charAt(0) }}{{ personalInfo.apellidos.charAt(0) }}</span>
+            </div>
+          </ng-template>
+        </div>
+        <h1>{{ personalInfo.nombre }} {{ personalInfo.apellidos }}</h1>
+        <h2>{{ personalInfo.titulo }}</h2>
+        <p class="tagline">{{ personalInfo.bio }}</p>
+        
+        <div class="motivational-quote">
+          <blockquote>
+            <p>"{{ personalInfo.fraseMotivacional }}"</p>
+          </blockquote>
+        </div>
+      </div>
+
+      <div class="personal-details">
+        <h3>Información Personal</h3>
+        <div class="details-grid">
+          <div class="detail-item">
+            <span class="label">Email:</span>
+            <a href="mailto:{{ personalInfo.email }}">{{ personalInfo.email }}</a>
+          </div>
+          <div class="detail-item">
+            <span class="label">Ubicación:</span>
+            <span>{{ personalInfo.ubicacion }}</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Estado:</span>
+            <span [class.available]="personalInfo.disponibilidad">
+              {{ personalInfo.estado }}
+            </span>
+          </div>
+        </div>
+        
+        <div class="achievements-section">
+          <h3>Logros Destacados</h3>
+          <div class="achievements-list">
+            <div class="achievement-item" *ngFor="let logro of personalInfo.logros">
+              <div class="achievement-icon">🏆</div>
+              <p>{{ logro }}</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="technologies-section">
+          <h3>Tecnologías Favoritas</h3>
+          <div class="technologies-grid">
+            <span class="tech-badge" *ngFor="let tech of personalInfo.tecnologiasFavoritas">
+              {{ tech }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
