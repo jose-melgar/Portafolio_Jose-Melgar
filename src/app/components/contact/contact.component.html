@@ -51,57 +51,6 @@
           </div>
         </div>
       </div>
-
-      <div class="contact-form-section">
-        <h3>Envíame un Mensaje</h3>
-        <form class="contact-form" (ngSubmit)="enviarMensaje()">
-          <div class="form-group">
-            <label for="nombre">Nombre:</label>
-            <input 
-              type="text" 
-              id="nombre" 
-              name="nombre" 
-              [(ngModel)]="formData.nombre" 
-              required
-              placeholder="Tu nombre completo">
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input 
-              type="email" 
-              id="email" 
-              name="email" 
-              [(ngModel)]="formData.email" 
-              required
-              placeholder="tu@email.com">
-          </div>
-
-          <div class="form-group">
-            <label for="asunto">Asunto:</label>
-            <input 
-              type="text" 
-              id="asunto" 
-              name="asunto" 
-              [(ngModel)]="formData.asunto" 
-              required
-              placeholder="Asunto del mensaje">
-          </div>
-
-          <div class="form-group">
-            <label for="mensaje">Mensaje:</label>
-            <textarea 
-              id="mensaje" 
-              name="mensaje" 
-              [(ngModel)]="formData.mensaje" 
-              required
-              rows="5"
-              placeholder="Cuéntame sobre tu proyecto..."></textarea>
-          </div>
-
-          <button type="submit" class="submit-btn">Enviar Mensaje</button>
-        </form>
-      </div>
     </div>
   </div>
 </section>
