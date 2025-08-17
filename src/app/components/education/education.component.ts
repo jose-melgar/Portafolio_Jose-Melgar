@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DataService } from '../../services/data.service';
 
 interface Educacion {
   id: number;
@@ -8,7 +9,8 @@ interface Educacion {
   fechaInicio: string;
   fechaFin?: string;
   descripcion: string;
-  tipo: string; // 'formal', 'certificacion', 'curso'
+  tipo: string;
+  certificado?: string;
 }
 
 @Component({
@@ -20,40 +22,32 @@ interface Educacion {
 })
 export class EducationComponent implements OnInit {
   
-  educacion: Educacion[] = [
-    {
-      id: 1,
-      titulo: 'Ingeniería de Sistemas',
-      institucion: 'Universidad Nacional',
-      fechaInicio: '2018-03',
-      fechaFin: '2023-12',
-      descripcion: 'Formación en desarrollo de software y sistemas informáticos',
-      tipo: 'formal'
-    },
-    {
-      id: 2,
-      titulo: 'Certificación Angular',
-      institucion: 'Platzi',
-      fechaInicio: '2023-06',
-      fechaFin: '2023-08',
-      descripcion: 'Curso completo de Angular y TypeScript',
-      tipo: 'certificacion'
-    },
-    {
-      id: 3,
-      titulo: 'Spring Boot Masterclass',
-      institucion: 'Udemy',
-      fechaInicio: '2023-01',
-      fechaFin: '2023-03',
-      descripcion: 'Desarrollo de aplicaciones backend con Spring Boot',
-      tipo: 'curso'
-    }
-  ];
+  educacion: Educacion[] = [];
+  
+  loadingEducation = true;
+  errorEducation = false;
 
-  constructor() {}
+  constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
-    console.log('Educación cargada:', this.educacion);
+    this.loadEducationData();
+  }
+  
+  loadEducationData(): void {
+    this.dataService.getEducation().subscribe({
+      next: (data) => {
+        if (data.error) {
+          this.errorEducation = true;
+        } else {
+          this.educacion = data.educacion;
+        }
+        this.loadingEducation = false;
+      },
+      error: (err) => {
+        this.errorEducation = true;
+        this.loadingEducation = false;
+      }
+    });
   }
 
   getEducacionPorTipo(tipo: string): Educacion[] {
@@ -67,6 +61,7 @@ export class EducationComponent implements OnInit {
   getTipoDisplay(tipo: string): string {
     const tipos = {
       'formal': 'Educación Formal',
+      'certificado': 'Certificados',
       'certificacion': 'Certificaciones',
       'curso': 'Cursos y Talleres'
     };

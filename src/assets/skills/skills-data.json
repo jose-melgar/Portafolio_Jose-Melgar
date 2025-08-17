@@ -1,140 +1,27 @@
 {
-  "habilidades": [
-    {
-      "id": 1,
-      "nombre": "Python: Data Structures",
-      "categoria": "Lenguajes de Programación",
-      "nivel": 4,
-      "descripcion": "Experiencia en desarrollo de aplicaciones, análisis de datos y machine learning.",
-      "certificado": "assets/skills/Python Data Structures_Coursera.pdf"
-    },
-    {
-      "id": 2,
-      "nombre": "SQL",
-      "categoria": "Lenguajes de Programación",
-      "nivel": 4,
-      "descripcion": "Diseño y consulta de bases de datos relacionales."
-    },
-    {
-      "id": 3,
-      "nombre": "C++",
-      "categoria": "Lenguajes de Programación",
-      "nivel": 3,
-      "descripcion": "Desarrollo de aplicaciones de escritorio y algoritmos."
-    },
-    {
-      "id": 4,
-      "nombre": "HTML/CSS/JavaScript",
-      "categoria": "Desarrollo Web",
-      "nivel": 4,
-      "descripcion": "Creación de interfaces web interactivas y responsivas."
-    },
-    {
-      "id": 5,
-      "nombre": "Angular",
-      "categoria": "Frameworks",
-      "nivel": 3,
-      "descripcion": "Desarrollo de aplicaciones web SPA modernas."
-    },
-    {
-      "id": 6,
-      "nombre": "PostgreSQL",
-      "categoria": "Bases de Datos",
-      "nivel": 3,
-      "descripcion": "Gestión de bases de datos relacionales."
-    },
-    {
-      "id": 7,
-      "nombre": "MongoDB: Introduction",
-      "categoria": "Bases de Datos",
-      "nivel": 3,
-      "descripcion": "Diseño y consulta de bases de datos NoSQL.",
-      "certificado": "assets/skills/Introduction to MongoDB_MongoDB.pdf"
-    },
-    {
-      "id": 8,
-      "nombre": "Git",
-      "categoria": "Herramientas",
-      "nivel": 4,
-      "descripcion": "Control de versiones y colaboración en proyectos."
-    },
-    {
-      "id": 9,
-      "nombre": "MATLAB: Programming",
-      "categoria": "Herramientas",
-      "nivel": 3,
-      "descripcion": "Análisis numérico y visualización de datos.",
-      "certificado": "assets/skills/Introduction to Programming with MATLAB_Coursera.pdf"
-    },
-    {
-      "id": 10,
-      "nombre": "Comunicación efectiva",
-      "categoria": "Habilidades blandas",
-      "nivel": 4,
-      "descripcion": "Capacidad para transmitir ideas de manera clara y concisa."
-    },
-    {
-      "id": 11,
-      "nombre": "Liderazgo de equipos",
-      "categoria": "Habilidades blandas",
-      "nivel": 3,
-      "descripcion": "Experiencia coordinando equipos de desarrollo en proyectos académicos."
-    },
-    {
-      "id": 12,
-      "nombre": "Python: Programming for Everybody",
-      "categoria": "Lenguajes de Programación",
-      "nivel": 4,
-      "descripcion": "Fundamentos de programación con Python.",
-      "certificado": "assets/skills/Programming for Everybody (Getting Started with_Coursera.pdf"
-    },
-    {
-      "id": 13,
-      "nombre": "Python: Web Data Access",
-      "categoria": "Desarrollo Web",
-      "nivel": 3,
-      "descripcion": "Técnicas para acceder y procesar datos web con Python.",
-      "certificado": "assets/skills/Using Python to Access Web Data_Coursera.pdf"
-    },
-    {
-      "id": 14,
-      "nombre": "Python: Databases",
-      "categoria": "Bases de Datos",
-      "nivel": 3,
-      "descripcion": "Integración de Python con bases de datos relacionales y NoSQL.",
-      "certificado": "assets/skills/Using Databases with Python_Coursera.pdf"
-    },
-    {
-      "id": 15,
-      "nombre": "Data Visualization",
-      "categoria": "Análisis de Datos",
-      "nivel": 3,
-      "descripcion": "Técnicas para recuperar, procesar y visualizar datos.",
-      "certificado": "assets/skills/Capstone Retrieving, Processing, and Visualizing_Coursera.pdf"
-    },
-    {
-      "id": 16,
-      "nombre": "Concept Art for Video Games",
-      "categoria": "Diseño Gráfico",
-      "nivel": 3,
-      "descripcion": "Creación de arte conceptual para videojuegos.",
-      "certificado": "assets/skills/Concept Art for Video Games_Coursera.pdf"
-    },
-    {
-      "id": 17,
-      "nombre": "3D Game Prop Production",
-      "categoria": "Diseño 3D",
-      "nivel": 3,
-      "descripcion": "Producción de props 3D para videojuegos de última generación.",
-      "certificado": "assets/skills/Current Gen 3D Game Prop Production_Coursera.pdf"
-    },
-    {
-      "id": 18,
-      "nombre": "Low Poly Art For Video Games",
-      "categoria": "Diseño 3D",
-      "nivel": 3,
-      "descripcion": "Creación de modelos 3D de baja poligonización para videojuegos.",
-      "certificado": "assets/skills/Low Poly Art For Video Games_Coursera.pdf"
-    }
+  "habilidades":[
+  { "id": 1, "nombre": "Python", "categoria": "Lenguajes de Programación", "descripcion": "Lenguaje multipropósito, fácil de aprender y ampliamente usado en ciencia de datos, web y automatización." },
+  { "id": 2, "nombre": "C++", "categoria": "Lenguajes de Programación", "descripcion": "Lenguaje orientado a objetos, utilizado en desarrollo de software de alto rendimiento y videojuegos." },
+  { "id": 3, "nombre": "JavaScript", "categoria": "Lenguajes de Programación", "descripcion": "Lenguaje principal para desarrollo web frontend y backend." },
+  { "id": 4, "nombre": "TypeScript", "categoria": "Lenguajes de Programación", "descripcion": "Superset de JavaScript que añade tipado estático." },
+
+  { "id": 5, "nombre": "HTML", "categoria": "Desarrollo Web", "descripcion": "Lenguaje de marcado para estructurar páginas web." },
+  { "id": 6, "nombre": "CSS", "categoria": "Desarrollo Web", "descripcion": "Lenguaje de estilos para diseño y presentación web." },
+  { "id": 7, "nombre": "Angular", "categoria": "Desarrollo Web", "descripcion": "Framework para aplicaciones web SPA." },
+
+  { "id": 8, "nombre": "Angular", "categoria": "Frameworks", "descripcion": "Framework para aplicaciones web SPA." },
+
+  { "id": 9, "nombre": "MongoDB", "categoria": "Bases de Datos", "descripcion": "Base de datos NoSQL orientada a documentos." },
+  { "id": 10, "nombre": "MySQL", "categoria": "Bases de Datos", "descripcion": "Base de datos relacional ampliamente utilizada." },
+  { "id": 11, "nombre": "PostgreSQL", "categoria": "Bases de Datos", "descripcion": "Base de datos relacional avanzada y open source." },
+  { "id": 12, "nombre": "SQLite", "categoria": "Bases de Datos", "descripcion": "Base de datos ligera y embebida." },
+
+  { "id": 13, "nombre": "Git", "categoria": "Herramientas", "descripcion": "Sistema de control de versiones distribuido." },
+  { "id": 14, "nombre": "Docker", "categoria": "Herramientas", "descripcion": "Plataforma para desarrollo y despliegue de aplicaciones en contenedores." },
+
+  { "id": 15, "nombre": "Comunicación", "categoria": "Habilidades Blandas", "descripcion": "Capacidad para expresar ideas y escuchar activamente." },
+  { "id": 16, "nombre": "Trabajo en equipo", "categoria": "Habilidades Blandas", "descripcion": "Colaboración efectiva con otros para lograr objetivos comunes." },
+  { "id": 17, "nombre": "Resolución de problemas", "categoria": "Habilidades Blandas", "descripcion": "Identificación y solución eficiente de desafíos." },
+  { "id": 18, "nombre": "Adaptabilidad", "categoria": "Habilidades Blandas", "descripcion": "Capacidad para ajustarse a cambios y aprender rápidamente." }
   ]
 }

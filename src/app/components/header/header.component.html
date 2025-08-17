@@ -11,10 +11,11 @@
     <!-- Desktop Navigation -->
     <nav class="nav-desktop">
       <ul class="nav-list">
-        <li class="nav-item" *ngFor="let item of navItems">
+        <li class="nav-item" *ngFor="let item of navItems; let i = index">
           <button 
             class="nav-link"
-            (click)="scrollToSection(item.sectionId)">
+            [class.active]="currentComponentIndex === i"
+            (click)="navigateToSection(item.sectionId)">
             <span class="nav-icon">{{ item.icon }}</span>
             <span class="nav-label">{{ item.label }}</span>
           </button>
@@ -33,10 +34,11 @@
   <!-- Mobile Navigation -->
   <nav class="nav-mobile" [class.open]="isMenuOpen">
     <ul class="nav-list-mobile">
-      <li class="nav-item-mobile" *ngFor="let item of navItems">
+      <li class="nav-item-mobile" *ngFor="let item of navItems; let i = index">
         <button 
           class="nav-link-mobile"
-          (click)="scrollToSection(item.sectionId)">
+          [class.active]="currentComponentIndex === i"
+          (click)="navigateToSection(item.sectionId)">
           <span class="nav-icon">{{ item.icon }}</span>
           <span class="nav-label">{{ item.label }}</span>
         </button>
@@ -44,3 +46,27 @@
     </ul>
   </nav>
 </header>
+
+<!-- Main Content Area -->
+<main class="main-content" [class.transitioning]="isTransitioning">
+  <!-- Current Component Indicator -->
+  <div class="component-indicator-header">
+    <div class="current-section">
+      <span class="section-icon">{{ navItems[currentComponentIndex].icon }}</span>
+      <span class="section-title">{{ getCurrentComponentName() }}</span>
+    </div>
+    <div class="progress-dots">
+      <span 
+        *ngFor="let item of navItems; let i = index" 
+        class="dot" 
+        [class.active]="currentComponentIndex === i"
+        [title]="item.label">
+      </span>
+    </div>
+  </div>
+
+  <!-- Dynamic Component Container -->
+  <div class="dynamic-component-wrapper">
+    <div #dynamicComponentContainer class="dynamic-component-container"></div>
+  </div>
+</main>

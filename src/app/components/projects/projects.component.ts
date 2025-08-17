@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DataService } from '../../services/data.service';
 
 interface Proyecto {
   id: number;
   titulo: string;
   descripcion: string;
   tecnologias: string[];
-  imagen: string;
+  imagen?: string;
   urlDemo?: string;
   urlGitHub?: string;
   categoria: string;
@@ -22,46 +23,31 @@ interface Proyecto {
 })
 export class ProjectsComponent implements OnInit {
   
-  proyectos: Proyecto[] = [
-    {
-      id: 1,
-      titulo: 'MusiConnect API',
-      descripcion: 'API RESTful para conectar músicos y bandas. Desarrollado con Spring Boot, Angular y MySQL.',
-      tecnologias: ['Spring Boot', 'Angular', 'MySQL', 'Docker'],
-      imagen: 'assets/images/musiconnect.jpg',
-      urlDemo: 'https://musiconnect-demo.com',
-      urlGitHub: 'https://github.com/jose-melgar/musiconnect-api',
-      categoria: 'Full Stack',
-      fecha: '2024'
-    },
-    {
-      id: 2,
-      titulo: 'E-commerce Platform',
-      descripcion: 'Plataforma de comercio electrónico completa con gestión de productos, carrito de compras y pagos.',
-      tecnologias: ['Java', 'Spring Boot', 'React', 'PostgreSQL'],
-      imagen: 'assets/images/ecommerce.jpg',
-      urlDemo: 'https://ecommerce-demo.com',
-      urlGitHub: 'https://github.com/jose-melgar/ecommerce',
-      categoria: 'Backend',
-      fecha: '2023'
-    },
-    {
-      id: 3,
-      titulo: 'Task Manager App',
-      descripcion: 'Aplicación de gestión de tareas con interfaz intuitiva y funcionalidades avanzadas.',
-      tecnologias: ['Angular', 'TypeScript', 'Bootstrap', 'LocalStorage'],
-      imagen: 'assets/images/taskmanager.jpg',
-      urlDemo: 'https://taskmanager-demo.com',
-      urlGitHub: 'https://github.com/jose-melgar/task-manager',
-      categoria: 'Frontend',
-      fecha: '2023'
-    }
-  ];
+  proyectos: Proyecto[] = [];
+  loadingProjects = true;
+  errorProjects = false;
 
-  constructor() {}
+  constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
-    console.log('Proyectos cargados:', this.proyectos);
+    this.loadProjectsData();
+  }
+  
+  loadProjectsData(): void {
+    this.dataService.getProjects().subscribe({
+      next: (data) => {
+        if (data.error) {
+          this.errorProjects = true;
+        } else {
+          this.proyectos = data.proyectos;
+        }
+        this.loadingProjects = false;
+      },
+      error: (err) => {
+        this.errorProjects = true;
+        this.loadingProjects = false;
+      }
+    });
   }
 
   getProyectosPorCategoria(categoria: string): Proyecto[] {

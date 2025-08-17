@@ -1,3 +1,35 @@
+.section {
+  padding: 4rem 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.section:nth-child(even) {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.loading-error, .error-message {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.loading-error p {
+  color: #667eea;
+  font-size: 1.1rem;
+}
+
+.error-message p {
+  color: #e74c3c;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
 .contact-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -29,14 +61,18 @@
   gap: 3rem;
 }
 
-.contact-info-section, .social-section, .contact-form-section {
+.contact-info-section,
+.social-section,
+.contact-form-section {
   background: white;
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
-.contact-info-section h3, .social-section h3, .contact-form-section h3 {
+.contact-info-section h3,
+.social-section h3,
+.contact-form-section h3 {
   color: #667eea;
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
@@ -87,7 +123,6 @@
   font-weight: 600;
 }
 
-/* Redes Sociales */
 .social-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -97,6 +132,7 @@
 .social-item {
   border-radius: 8px;
   overflow: hidden;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   transition: all 0.3s ease;
 }
 
@@ -108,12 +144,12 @@
 .social-link {
   display: flex;
   align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
   gap: 0.5rem;
-  padding: 1rem;
   color: white;
   text-decoration: none;
   font-weight: 500;
-  transition: all 0.3s ease;
 }
 
 .social-icon {
@@ -122,7 +158,6 @@
   text-align: center;
 }
 
-/* Formulario */
 .contact-form {
   display: grid;
   gap: 1.5rem;
@@ -182,7 +217,6 @@
   transform: translateY(0);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .contact-container {
     padding: 1rem;
@@ -212,7 +246,53 @@
     font-size: 1.8rem;
   }
   
-  .contact-info-section, .social-section, .contact-form-section {
+  .contact-info-section,
+  .social-section,
+  .contact-form-section {
     padding: 1.5rem;
   }
+}
+
+.social-section {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.social-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.social-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.social-link:hover {
+  transform: scale(1.05);
+  color: #1da1f2;
+}
+
+.social-icon {
+  width: 28px;
+  height: 28px;
+  filter: invert(100%) brightness(100%);
+}
+
+.social-text {
+  display: inline-block;
 }

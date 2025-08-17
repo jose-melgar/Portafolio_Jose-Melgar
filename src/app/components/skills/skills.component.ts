@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DataService } from '../../services/data.service';
 
 interface Habilidad {
   id: number;
@@ -7,6 +8,7 @@ interface Habilidad {
   categoria: string;
   nivel: number; // 1-5
   descripcion: string;
+  certificado?: string;
 }
 
 @Component({
@@ -18,55 +20,37 @@ interface Habilidad {
 })
 export class SkillsComponent implements OnInit {
   
-  habilidades: Habilidad[] = [
-    {
-      id: 1,
-      nombre: 'Angular',
-      categoria: 'Frontend',
-      nivel: 4,
-      descripcion: 'Framework de desarrollo frontend'
-    },
-    {
-      id: 2,
-      nombre: 'Spring Boot',
-      categoria: 'Backend',
-      nivel: 4,
-      descripcion: 'Framework de desarrollo backend'
-    },
-    {
-      id: 3,
-      nombre: 'Java',
-      categoria: 'Backend',
-      nivel: 5,
-      descripcion: 'Lenguaje de programación principal'
-    },
-    {
-      id: 4,
-      nombre: 'TypeScript',
-      categoria: 'Frontend',
-      nivel: 4,
-      descripcion: 'Lenguaje de programación tipado'
-    },
-    {
-      id: 5,
-      nombre: 'MySQL',
-      categoria: 'Base de Datos',
-      nivel: 4,
-      descripcion: 'Sistema de gestión de bases de datos'
-    },
-    {
-      id: 6,
-      nombre: 'Docker',
-      categoria: 'DevOps',
-      nivel: 3,
-      descripcion: 'Plataforma de contenedores'
-    }
-  ];
+  habilidades: Habilidad[] = [];
+  
+  // Estados de carga
+  loadingSkills = true;
+  
+  // Estados de error
+  errorSkills = false;
 
-  constructor() {}
+  constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
-    console.log('Habilidades cargadas:', this.habilidades);
+    this.loadSkillsData();
+  }
+  
+  loadSkillsData(): void {
+    this.dataService.getSkills().subscribe({
+      next: (data) => {
+        if (data.error) {
+          this.errorSkills = true;
+        } else {
+          this.habilidades = data.habilidades;
+          console.log('Habilidades cargadas:', this.habilidades);
+        }
+        this.loadingSkills = false;
+      },
+      error: (err) => {
+        console.error('Error al cargar habilidades:', err);
+        this.errorSkills = true;
+        this.loadingSkills = false;
+      }
+    });
   }
 
   getHabilidadesPorCategoria(categoria: string): Habilidad[] {

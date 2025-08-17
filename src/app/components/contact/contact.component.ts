@@ -1,19 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { DataService } from '../../services/data.service';
 
 interface RedSocial {
   id: number;
   nombre: string;
   url: string;
   icono: string;
-  color: string;
+  color?: string;
 }
 
 interface ContactInfo {
   email: string;
   telefono: string;
   ubicacion: string;
+  github: string;
+  linkedin: string;
   disponibilidad: boolean;
 }
 
@@ -26,43 +29,10 @@ interface ContactInfo {
 })
 export class ContactComponent implements OnInit {
   
-  contactInfo: ContactInfo = {
-    email: 'jose.melgar@example.com',
-    telefono: '+51 999 888 777',
-    ubicacion: 'Lima, Perú',
-    disponibilidad: true
-  };
-
-  redesSociales: RedSocial[] = [
-    {
-      id: 1,
-      nombre: 'LinkedIn',
-      url: 'https://linkedin.com/in/jose-melgar',
-      icono: 'linkedin',
-      color: '#0077b5'
-    },
-    {
-      id: 2,
-      nombre: 'GitHub',
-      url: 'https://github.com/jose-melgar',
-      icono: 'github',
-      color: '#333'
-    },
-    {
-      id: 3,
-      nombre: 'Twitter',
-      url: 'https://twitter.com/jose-melgar',
-      icono: 'twitter',
-      color: '#1da1f2'
-    },
-    {
-      id: 4,
-      nombre: 'Email',
-      url: 'mailto:jose.melgar@example.com',
-      icono: 'email',
-      color: '#ea4335'
-    }
-  ];
+  contactInfo: ContactInfo | null = null;
+  redesSociales: RedSocial[] = [];
+  loadingContact = true;
+  errorContact = false;
 
   formData = {
     nombre: '',
@@ -71,15 +41,31 @@ export class ContactComponent implements OnInit {
     mensaje: ''
   };
 
-  constructor() {}
+  constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
-    console.log('Información de contacto cargada:', this.contactInfo);
+    this.loadContactData();
+  }
+  
+  loadContactData(): void {
+    this.dataService.getContactInfo().subscribe({
+      next: (data) => {
+        if (data.error) {
+          this.errorContact = true;
+        } else {
+          this.contactInfo = data.contactInfo;
+          this.redesSociales = data.redesSociales;
+        }
+        this.loadingContact = false;
+      },
+      error: (err) => {
+        this.errorContact = true;
+        this.loadingContact = false;
+      }
+    });
   }
 
   enviarMensaje(): void {
-    console.log('Mensaje enviado:', this.formData);
-    // Aquí se implementaría la lógica para enviar el mensaje
     alert('Mensaje enviado correctamente!');
     this.limpiarFormulario();
   }

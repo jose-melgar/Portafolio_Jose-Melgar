@@ -1,13 +1,114 @@
 {
-  "educacion": [
-    {
-      "id": 1,
-      "titulo": "Ciencias de la Computación (8vo ciclo)",
-      "institucion": "Universidad Nacional Mayor de San Marcos",
-      "fechaInicio": "2020",
-      "fechaFin": "Actualidad",
-      "descripcion": "Estudiante de Ciencias de la Computación con enfoque en desarrollo web y machine learning.",
-      "tipo": "formal"
-    }
-  ]
-}
+    "educacion": [
+      {
+        "id": 1,
+        "titulo": "Ciencias de la Computación (8vo ciclo)",
+        "institucion": "Universidad Nacional Mayor de San Marcos",
+        "fechaInicio": "2020",
+        "fechaFin": "Actualidad",
+        "descripcion": "Estudiante de Ciencias de la Computación con enfoque en desarrollo web y machine learning.",
+        "tipo": "formal"
+      },
+      {
+        "id": 2,
+        "titulo": "Current Gen 3D Game Prop Production",
+        "institucion": "Universidad del Estado de Michigan (Coursera)",
+        "fechaInicio": "Marzo 2024",
+        "fechaFin": "Mayo 2024",
+        "descripcion": "Certificación enfocada en la creación de props 3D de nueva generación para videojuegos.",
+        "tipo": "certificado",
+        "certificado": "assets/certificates/Current Gen 3D Game Prop Production_Coursera.pdf"
+      },
+      {
+        "id": 3,
+        "titulo": "Concept Art for Video Games",
+        "institucion": "Universidad del Estado de Michigan (Coursera)",
+        "fechaInicio": "Marzo 2024",
+        "fechaFin": "Mayo 2024",
+        "descripcion": "Curso especializado en diseño y desarrollo de arte conceptual para videojuegos.",
+        "tipo": "certificado",
+        "certificado": "assets/certificates/Concept Art for Video Games_Coursera.pdf"
+      },
+      {
+        "id": 4,
+        "titulo": "Low Poly Art for Video Games",
+        "institucion": "Universidad del Estado de Michigan (Coursera)",
+        "fechaInicio": "Marzo 2024",
+        "fechaFin": "Mayo 2024",
+        "descripcion": "Curso orientado a la creación de modelos low poly para entornos de videojuegos.",
+        "tipo": "certificado",
+        "certificado": "assets/certificates/Low Poly Art For Video Games_Coursera.pdf"
+      },
+      {
+        "id": 5,
+        "titulo": "Using Python to Access Web Data",
+        "institucion": "Universidad del Estado de Michigan (Coursera)",
+        "fechaInicio": "Marzo 2024",
+        "fechaFin": "Mayo 2024",
+        "descripcion": "Curso sobre el uso de Python para acceder, procesar y analizar datos en la web.",
+        "tipo": "certificado",
+        "certificado": "assets/certificates/Using Python to Access Web Data_Coursera.pdf"
+      },
+      {
+        "id": 6,
+        "titulo": "Capstone: Retrieving, Processing, and Visualizing Data with Python",
+        "institucion": "Universidad del Estado de Michigan (Coursera)",
+        "fechaInicio": "Marzo 2024",
+        "fechaFin": "Mayo 2024",
+        "descripcion": "Proyecto final enfocado en la recuperación, procesamiento y visualización de datos con Python.",
+        "tipo": "certificado",
+        "certificado": "assets/certificates/Capstone Retrieving, Processing, and Visualizing_Coursera.pdf"
+      },
+      {
+        "id": 7,
+        "titulo": "Using Databases with Python",
+        "institucion": "Universidad del Estado de Michigan (Coursera)",
+        "fechaInicio": "Marzo 2024",
+        "fechaFin": "Mayo 2024",
+        "descripcion": "Certificación en integración de Python con bases de datos relacionales.",
+        "tipo": "certificado",
+        "certificado": "assets/certificates/Using Databases with Python_Coursera.pdf"
+      },
+      {
+        "id": 8,
+        "titulo": "Programming for Everybody (Getting Started with Python)",
+        "institucion": "Universidad del Estado de Michigan (Coursera)",
+        "fechaInicio": "Marzo 2024",
+        "fechaFin": "Mayo 2024",
+        "descripcion": "Curso introductorio de programación en Python para principiantes.",
+        "tipo": "certificado",
+        "certificado": "assets/certificates/Programming for Everybody (Getting Started with_Coursera.pdf"
+      },
+      {
+        "id": 9,
+        "titulo": "Python Data Structures",
+        "institucion": "Universidad del Estado de Michigan (Coursera)",
+        "fechaInicio": "Marzo 2024",
+        "fechaFin": "Mayo 2024",
+        "descripcion": "Curso enfocado en el uso de estructuras de datos con Python.",
+        "tipo": "certificado",
+        "certificado": "assets/certificates/Python Data Structures_Coursera.pdf"
+      },
+      {
+        "id": 10,
+        "titulo": "Introduction to Programming with MATLAB",
+        "institucion": "Universidad de Vanderbilt (Coursera)",
+        "fechaInicio": "Marzo 2024",
+        "fechaFin": "Mayo 2024",
+        "descripcion": "Curso de introducción a la programación con MATLAB aplicado a ingeniería y ciencia.",
+        "tipo": "certificado",
+        "certificado": "assets/certificates/Introduction to Programming with MATLAB_Coursera.pdf"
+      },
+      {
+        "id": 11,
+        "titulo": "Introduction to MongoDB",
+        "institucion": "MongoDB University",
+        "fechaInicio": "Agosto 2023",
+        "fechaFin": "Octubre 2023",
+        "descripcion": "Certificación en fundamentos de MongoDB, consultas y modelado de datos.",
+        "tipo": "certificado",
+        "certificado": "assets/certificates/Introduction to MongoDB_MongoDB.pdf"
+      }
+    ]
+  }
+  
